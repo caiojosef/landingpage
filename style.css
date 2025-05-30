@@ -11,10 +11,10 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #121212; /* Very dark grey */
-    color: #E0E0E0; /* Light grey text */
+    background-color: #121212;
+    color: #E0E0E0;
     line-height: 1.7;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 .page-wrapper {
@@ -53,17 +53,16 @@ body {
     position: relative;
 }
 
-.brand-title {
+.brand-title { 
     font-size: clamp(2.8rem, 9vw, 5.5rem); 
     font-weight: 900;
     color: #FFFFFF;
     letter-spacing: -0.5px;
     margin-bottom: 15px;
     text-shadow: 0px 0px 15px rgba(223, 173, 255, 0.5), 0px 0px 30px rgba(187, 134, 252, 0.3); 
-    animation: fadeInDown 1s ease-out 0.2s backwards; 
 }
 
-.tagline {
+.tagline { 
     font-size: clamp(1.1rem, 2.8vw, 1.5rem); 
     color: #D0D0D0; 
     margin-bottom: 40px; 
@@ -71,7 +70,6 @@ body {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 1s ease-out 0.5s backwards; 
 }
 
 .cta-container { 
@@ -79,23 +77,18 @@ body {
     text-align: center; 
 }
 
-.cta-container.animate-hero-button { 
-    animation: fadeInUp 1s ease-out 0.8s backwards; 
-}
-
 .additional-cta { 
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-/* ESTILO DO BOTÃO CTA PRINCIPAL MELHORADO (COM AJUSTES PARA SUBTEXTO) */
 .whatsapp-cta-button {
     display: inline-block; 
     background: linear-gradient(135deg, #BB86FC, #A569BD); 
     color: #FFFFFF;
-    font-size: clamp(1.05rem, 2.2vw, 1.35rem); /* Levemente ajustado para acomodar duas linhas */
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem); 
     font-weight: 700; 
-    padding: 18px 35px; /* Padding ajustado para texto em duas linhas */
+    padding: 18px 35px; 
     border-radius: 50px; 
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
@@ -104,22 +97,21 @@ body {
     cursor: pointer;
     text-transform: uppercase; 
     letter-spacing: 0.8px; 
-    line-height: 1.4; /* Ajustado para melhor espaçamento com duas linhas */
+    line-height: 1.4; 
     position: relative; 
     animation: pulseButton 2s infinite ease-in-out; 
-    text-align: center; /* Garante que o texto interno e o small fiquem centralizados */
+    text-align: center; 
 }
 
-.whatsapp-cta-button span small { /* Estilo para o texto menor dentro do botão */
-    font-size: 0.7em; /* Relativo ao tamanho do texto principal do botão */
-    font-weight: 400; /* Menos peso que o texto principal */
-    display: block; /* Faz com que o <small> ocupe uma nova linha */
-    margin-top: 4px; /* Espaço entre o texto principal e o <small> */
+.whatsapp-cta-button span small { 
+    font-size: 0.7em; 
+    font-weight: 400; 
+    display: block; 
+    margin-top: 4px; 
     letter-spacing: 0.3px; 
-    text-transform: none; /* Para não ser tudo maiúsculo */
+    text-transform: none; 
     opacity: 0.9; 
 }
-
 
 @keyframes pulseButton {
     0% { transform: scale(1); box-shadow: 0 8px 15px rgba(187, 134, 252, 0.3), 0 4px 8px rgba(0, 0, 0, 0.15); }
@@ -139,16 +131,62 @@ body {
     transform: translateY(-2px) scale(1.05); 
     box-shadow: 0 5px 15px rgba(187, 134, 252, 0.3); 
 }
-/* FIM DO ESTILO DO BOTÃO CTA PRINCIPAL */
 
-.cta-subtext {
+.cta-subtext { 
     font-size: clamp(0.9rem, 2vw, 1.05rem); 
     color: #C0C0C0;
     margin-top: 18px; 
     font-weight: 500;
 }
 
-/* Animações de entrada para Hero */
+.economy-counter-container {
+    margin-top: 25px; 
+    text-align: center;
+}
+
+.economy-counter-prefix,
+.economy-counter-suffix {
+    font-size: clamp(0.9rem, 2vw, 1.1rem); 
+    color: #C0C0C0; 
+    font-weight: 500;
+    display: block; 
+    margin-bottom: 5px;
+}
+.economy-counter-suffix {
+    margin-top: 5px; 
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+}
+
+#economyCounter, .economy-counter-value { 
+    font-size: clamp(2.2rem, 7vw, 4rem); 
+    font-weight: 900; 
+    color: #BB86FC; 
+    margin: 0 5px;
+    display: inline-block; 
+    line-height: 1;
+}
+
+.people-counter-container {
+    margin-top: 20px; 
+    text-align: center;
+}
+
+.people-counter-prefix,
+.people-counter-suffix {
+    font-size: clamp(0.9rem, 2vw, 1.1rem); 
+    color: #C0C0C0; 
+    font-weight: 500;
+}
+
+#peopleCounter, .people-counter-value { 
+    font-size: clamp(2rem, 6vw, 3.5rem); 
+    font-weight: 900; 
+    color: #BB86FC; 
+    margin: 0 5px;
+    display: inline-block; 
+    line-height: 1;
+}
+
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -157,8 +195,13 @@ body {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.animate-hero-title { animation: fadeInDown 0.8s ease-out 0.2s backwards; }
+.animate-hero-tagline { animation: fadeInUp 0.8s ease-out 0.5s backwards; }
+.animate-hero-button { animation: fadeInUp 0.8s ease-out 0.8s backwards; display: inline-block; } 
+.animate-hero-subtext { animation: fadeInUp 0.8s ease-out 1.0s backwards; }
+.animate-hero-counter { animation: fadeInUp 0.8s ease-out 1.2s backwards; }
+.animate-hero-people-counter { animation: fadeInUp 0.8s ease-out 1.4s backwards; }
 
-/* Benefits Section */
 .benefits-section {
     width: 100%;
     padding: 60px 20px;
@@ -214,7 +257,6 @@ body {
     line-height: 1.6;
 }
 
-/* ESTILOS PARA A SEÇÃO DE GALERIA */
 .gallery-section {
     width: 100%;
     padding: 60px 20px;
@@ -279,7 +321,6 @@ body {
     opacity: 1; 
 }
 
-/* Botão para ver todos os produtos */
 .view-all-products-container {
     text-align: center;
     margin-top: 30px; 
@@ -307,8 +348,6 @@ body {
     box-shadow: 0 5px 15px rgba(187, 134, 252, 0.3);
 }
 
-
-/* ESTILOS PARA A SEÇÃO DE MARCAS E MARKETPLACES */
 .brands-section {
     width: 100%;
     padding: 50px 20px;
@@ -395,7 +434,6 @@ body {
     }
 }
 
-/* Final CTA Section */
 .final-cta-section {
     width: 100%;
     padding: 70px 20px;
@@ -420,7 +458,6 @@ body {
     margin-right: auto;
 }
 
-/* Footer */
 footer {
     width: 100%;
     text-align: center;
@@ -434,7 +471,6 @@ footer p {
     color: #757575; 
 }
 
-/* CSS PARA SCROLL REVEAL */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(40px); 
@@ -447,7 +483,6 @@ footer p {
     transform: translateY(0);
 }
 
-/* Botão Voltar ao Topo */
 #backToTopBtn {
     display: none; 
     position: fixed;
@@ -507,6 +542,10 @@ footer p {
     .brand-logo-item img {
         max-height: 45px; 
     }
+    .economy-counter-prefix, .economy-counter-suffix, 
+    .people-counter-prefix, .people-counter-suffix {font-size: clamp(0.8rem, 2vw, 1rem);}
+    #economyCounter, .economy-counter-value, 
+    #peopleCounter, .people-counter-value { font-size: clamp(1.8rem, 5vw, 3rem);}
 }
 
 @media (max-width: 768px) { 
@@ -518,10 +557,10 @@ footer p {
     }
     .whatsapp-cta-button {
         padding: 16px 35px; 
-        line-height: 1.3; /* Ajuste para texto de duas linhas em telas menores */
+        line-height: 1.3; 
     }
     .whatsapp-cta-button span small {
-        margin-top: 3px; /* Menor margem no mobile */
+        margin-top: 3px; 
         font-size: 0.6em;
     }
 
@@ -564,6 +603,10 @@ footer p {
     .benefit-card h3 {
         font-size: 1.3rem;
     }
+    .economy-counter-prefix, .economy-counter-suffix,
+    .people-counter-prefix, .people-counter-suffix {font-size: clamp(0.75rem, 1.8vw, 0.9rem);}
+    #economyCounter, .economy-counter-value,
+    #peopleCounter, .people-counter-value { font-size: clamp(1.6rem, 4.5vw, 2.8rem);}
 }
 
 @media (max-width: 480px) { 
@@ -579,7 +622,7 @@ footer p {
         font-size: clamp(1rem, 2.5vw, 1.2rem);
     }
     .whatsapp-cta-button {
-        padding: 15px 25px; /* Padding ajustado para texto de duas linhas */
+        padding: 15px 25px; 
         font-size: clamp(1rem, 2.2vw, 1.1rem); 
         width: 90%; 
         margin-left: auto; 
@@ -597,11 +640,41 @@ footer p {
     .cta-subtext {
         font-size: clamp(0.8rem, 1.8vw, 0.95rem);
     }
-     .cta-container { 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    
+
+    /* Ajustes para os contadores no mobile */
+    .economy-counter-container {
+        text-align: center;
+        margin-top: 15px; 
+        margin-bottom: 10px; 
     }
+    .people-counter-container {
+        text-align: center;
+        margin-top: 10px; 
+        margin-bottom: 20px; 
+    }
+    .economy-counter-prefix, .economy-counter-suffix,
+    .people-counter-prefix, .people-counter-suffix {
+        font-size: clamp(0.7rem, 1.5vw, 0.85rem); /* Um pouco maior para melhor leitura */
+        text-align: center; /* Garante centralização */
+        display: block; /* Para que ocupem a linha e centralizem */
+        line-height: 1.3;
+    }
+    .economy-counter-suffix { margin-top: 3px; } /* Ajuste fino */
+    .people-counter-suffix { margin-left: 3px; display: inline; } /* Para ficar ao lado do número */
+    .people-counter-prefix { display: inline; margin-right: 3px;}
+
+
+    #economyCounter, .economy-counter-value,
+    #peopleCounter, .people-counter-value { 
+        font-size: clamp(1.8rem, 5vw, 2.8rem); /* Aumentado para destaque */
+        line-height: 1; 
+        display: block; /* Faz o número ocupar a própria linha */
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    /* Fim dos ajustes para os contadores no mobile */
+
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
     }
