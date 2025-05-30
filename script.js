@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         let startTime = null;
         startValue = parseFloat(startValue) || 0;
-        endValue = parseFloat(endValue) || 0; // Garante que endValue também seja numérico
+        endValue = parseFloat(endValue) || 0;
 
         function animation(currentTime) {
             if (startTime === null) startTime = currentTime;
@@ -83,68 +83,66 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Contador de Economia ---
     const economyCounterElement = document.getElementById('economyCounter');
     const economyLocalStorageKey = 'allpromoUserEconomy';
-    const defaultInitialEconomy = 300; // Começa do zero para novos usuários
-    let economyValueTracker = { current: defaultInitialEconomy }; // Inicializa com o default
+    // MODIFICAÇÃO AQUI: Novo valor inicial padrão para a economia
+    const defaultInitialEconomy = 3575.05; // <<<< VALOR INICIAL PADRÃO ALTERADO
+    let economyValueTracker = { current: defaultInitialEconomy }; 
 
     if (economyCounterElement) {
-        console.log('LocalStorage Economia (antes):', localStorage.getItem(economyLocalStorageKey)); // Debug
+        console.log('LocalStorage Economia (antes):', localStorage.getItem(economyLocalStorageKey)); 
         const savedEconomy = parseFloat(localStorage.getItem(economyLocalStorageKey));
         let animateEconomyTo = defaultInitialEconomy;
 
-        if (savedEconomy && !isNaN(savedEconomy) && savedEconomy > 0) {
+        if (savedEconomy && !isNaN(savedEconomy) && savedEconomy >= defaultInitialEconomy) { // Comparar com default para garantir que não comece menor que o novo default
             animateEconomyTo = savedEconomy;
-            economyValueTracker.current = savedEconomy; // Define o valor atual se encontrado no localStorage
+            economyValueTracker.current = savedEconomy; 
         } else {
-            // Se não tem nada salvo, ou inválido, o economyValueTracker.current já é defaultInitialEconomy (0)
-            // e animateEconomyTo também é 0.
-            localStorage.removeItem(economyLocalStorageKey); // Limpa qualquer valor inválido
+            economyValueTracker.current = defaultInitialEconomy; // Garante que o valor base para incrementos seja o default
+            localStorage.removeItem(economyLocalStorageKey); 
         }
         
-        console.log('Economia - Animando de 0 para:', animateEconomyTo); // Debug
+        console.log('Economia - Animando de 0 para:', animateEconomyTo); 
         // A animação visual sempre começa de 0 para o usuário ver a subida
-        animateDisplayValue(economyCounterElement, 0, animateEconomyTo, 2000, formatCurrency, function() {
+        animateDisplayValue(economyCounterElement, 0, animateEconomyTo, 2000, formatCurrency, function() { // Duração da animação inicial pode ser ajustada
             setInterval(function() {
                 const minAmount = 0.13;
                 const maxAmount = 5.77;
                 const randomAmount = parseFloat((Math.random() * (maxAmount - minAmount) + minAmount).toFixed(2));
                 const newEconomyValue = economyValueTracker.current + randomAmount;
-                // Anima do valor atual para o novo valor
                 animateDisplayValue(economyCounterElement, economyValueTracker.current, newEconomyValue, 1000, formatCurrency, null, economyValueTracker, economyLocalStorageKey);
-            }, 3000); // Seu intervalo: 2 * 30 * 50 = 3000ms (3 segundos)
+            }, 3000); // Seu intervalo: 3 segundos
         }, economyValueTracker, economyLocalStorageKey);
     }
 
     // --- Contador de Pessoas ---
     const peopleCounterElement = document.getElementById('peopleCounter');
     const peopleLocalStorageKey = 'allpromoUserPeople';
-    const defaultInitialPeople = 200; 
-    let peopleValueTracker = { current: defaultInitialPeople }; // Inicializa com o default
+    const defaultInitialPeople = 1437; 
+    let peopleValueTracker = { current: defaultInitialPeople }; 
 
     if (peopleCounterElement) {
-        console.log('LocalStorage Pessoas (antes):', localStorage.getItem(peopleLocalStorageKey)); // Debug
+        console.log('LocalStorage Pessoas (antes):', localStorage.getItem(peopleLocalStorageKey)); 
         const savedPeople = parseInt(localStorage.getItem(peopleLocalStorageKey), 10);
         let animatePeopleTo = defaultInitialPeople;
-        let animatePeopleFrom = Math.max(0, defaultInitialPeople - 50); // Ponto de partida visual da animação
+        let animatePeopleFrom = Math.max(0, defaultInitialPeople - 100); // Ponto de partida visual da animação (ex: 100 a menos)
 
         if (savedPeople && !isNaN(savedPeople) && savedPeople >= defaultInitialPeople) {
             animatePeopleTo = savedPeople;
-            animatePeopleFrom = Math.max(0, savedPeople - 50);
+            animatePeopleFrom = Math.max(0, savedPeople - 100); // Anima de um pouco antes do valor salvo
             peopleValueTracker.current = savedPeople;
         } else {
-            // Se não tem nada salvo, ou inválido, peopleValueTracker.current já é defaultInitialPeople (200)
-            // e animatePeopleTo também é 200.
-            localStorage.removeItem(peopleLocalStorageKey); // Limpa qualquer valor inválido
+            peopleValueTracker.current = defaultInitialPeople; // Garante que o valor base para incrementos seja o default
+            localStorage.removeItem(peopleLocalStorageKey); 
         }
 
-        console.log('Pessoas - Animando de', animatePeopleFrom, 'para:', animatePeopleTo); // Debug
+        console.log('Pessoas - Animando de', animatePeopleFrom, 'para:', animatePeopleTo); 
         animateDisplayValue(peopleCounterElement, animatePeopleFrom, animatePeopleTo, 2000, formatNumber, function() {
             setInterval(function() {
                 const minPeople = 1;
-                const maxPeople = 7;
+                const maxPeople = 12;
                 const randomPeople = Math.floor(Math.random() * (maxPeople - minPeople + 1)) + minPeople;
                 const newPeopleValue = peopleValueTracker.current + randomPeople;
                 animateDisplayValue(peopleCounterElement, peopleValueTracker.current, newPeopleValue, 1000, formatNumber, null, peopleValueTracker, peopleLocalStorageKey);
-            }, 4500); // Seu intervalo: 3 * 30 * 50 = 4500ms (4.5 segundos)
+            }, 4500); // Seu intervalo: 4.5 segundos
         }, peopleValueTracker, peopleLocalStorageKey);
     }
 });
