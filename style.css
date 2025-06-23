@@ -11,8 +11,10 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #121212; /* Fundo escuro mantido para contraste */
-    color: #E0E0E0;
+    background-color: #10121A;
+    /* Fundo azul-marinho escuro e sofisticado */
+    color: #F0F0F0;
+    /* Texto principal claro para alto contraste */
     line-height: 1.7;
     overflow-x: hidden;
 }
@@ -24,7 +26,7 @@ body {
     align-items: center;
 }
 
-/* Hero Section Enhanced with New Colors */
+/* Hero Section com a Nova Paleta Tech */
 .hero-section {
     width: 100%;
     min-height: 100vh;
@@ -35,17 +37,25 @@ body {
     text-align: center;
     padding: 40px 20px;
     position: relative;
-    /* Gradiente de fundo mais neutro e escuro para destacar os detalhes em amarelo/laranja */
-    background: linear-gradient(-45deg, #2d2d2d, #1a1a1a, #2c2c2c, #0d0d0d);
+    /* Gradiente de fundo dinâmico com tons de azul e roxo escuro */
+    background: linear-gradient(-45deg, #16213E, #0F3460, #1A1A2E, #533483);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     overflow: hidden;
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hero-content {
@@ -60,13 +70,14 @@ body {
     color: #FFFFFF;
     letter-spacing: -0.5px;
     margin-bottom: 15px;
-    /* Sombra de texto com a nova paleta de cores */
-    text-shadow: 0px 0px 15px rgba(255, 214, 0, 0.6), 0px 0px 30px rgba(255, 145, 0, 0.4);
+    /* Sombra de texto com brilho neon azul e roxo */
+    text-shadow: 0px 0px 15px rgba(77, 150, 255, 0.6), 0px 0px 30px rgba(154, 77, 255, 0.4);
 }
 
 .tagline {
     font-size: clamp(1.1rem, 2.8vw, 1.5rem);
-    color: #D0D0D0;
+    color: #A0AEC0;
+    /* Cor de subtítulo suave */
     margin-bottom: 40px;
     font-weight: 400;
     max-width: 650px;
@@ -84,18 +95,20 @@ body {
     margin-bottom: 20px;
 }
 
-/* Botão CTA Principal com novas cores vibrantes */
+/* Botão CTA Principal com gradiente vibrante */
 .whatsapp-cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #FFD600, #FF9100); /* Amarelo para Laranja */
-    color: #1A1A1A; /* Texto escuro para legibilidade */
+    background: linear-gradient(135deg, #4D96FF, #9A4DFF);
+    /* Gradiente de Azul para Roxo */
+    color: #FFFFFF;
+    /* Texto branco para legibilidade */
     font-size: clamp(1.05rem, 2.2vw, 1.35rem);
     font-weight: 700;
     padding: 18px 35px;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 8px 15px rgba(255, 145, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(77, 150, 255, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2);
     border: none;
     cursor: pointer;
     text-transform: uppercase;
@@ -117,99 +130,126 @@ body {
 }
 
 @keyframes pulseButton {
-    0% { transform: scale(1); box-shadow: 0 8px 15px rgba(255, 145, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.15); }
-    50% { transform: scale(1.05); box-shadow: 0 12px 25px rgba(255, 145, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.25); }
-    100% { transform: scale(1); box-shadow: 0 8px 15px rgba(255, 145, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.15); }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 15px rgba(77, 150, 255, 0.35);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 25px rgba(154, 77, 255, 0.45);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 15px rgba(77, 150, 255, 0.35);
+    }
 }
 
-.whatsapp-cta-button:hover, .whatsapp-cta-button:focus {
-    background: linear-gradient(135deg, #FFDC33, #FF9E2A); /* Variação mais clara no hover */
+.whatsapp-cta-button:hover,
+.whatsapp-cta-button:focus {
+    background: linear-gradient(135deg, #63A4FF, #AC6AFF);
+    /* Variação mais clara no hover */
     transform: translateY(-5px) scale(1.08);
-    box-shadow: 0 12px 25px rgba(255, 145, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 25px rgba(154, 77, 255, 0.45), 0 6px 12px rgba(0, 0, 0, 0.25);
     animation-play-state: paused;
 }
 
 .whatsapp-cta-button:active {
-    background: linear-gradient(135deg, #E6C200, #E68200); /* Variação mais escura no clique */
+    background: linear-gradient(135deg, #3B82F6, #8A33FF);
+    /* Variação mais escura no clique */
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 145, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(77, 150, 255, 0.4);
 }
 
 .cta-subtext {
     font-size: clamp(0.9rem, 2vw, 1.05rem);
-    color: #C0C0C0;
+    color: #A0AEC0;
     margin-top: 18px;
     font-weight: 500;
 }
 
-.economy-counter-container {
+.economy-counter-container,
+.people-counter-container {
     margin-top: 25px;
     text-align: center;
 }
 
 .economy-counter-prefix,
-.economy-counter-suffix {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: #C0C0C0;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 5px;
-}
-.economy-counter-suffix {
-    margin-top: 5px;
-    font-size: clamp(0.8rem, 1.8vw, 1rem);
-}
-
-/* Cor de destaque principal alterada para amarelo */
-#economyCounter, .economy-counter-value {
-    font-size: clamp(2.2rem, 7vw, 4rem);
-    font-weight: 900;
-    color: #FFD600;
-    margin: 0 5px;
-    display: inline-block;
-    line-height: 1;
-}
-
-.people-counter-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
+.economy-counter-suffix,
 .people-counter-prefix,
 .people-counter-suffix {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: #C0C0C0;
+    color: #A0AEC0;
     font-weight: 500;
 }
 
-#peopleCounter, .people-counter-value {
-    font-size: clamp(2rem, 6vw, 3.5rem);
+/* Cor de destaque principal alterada para azul elétrico */
+#economyCounter,
+.economy-counter-value,
+#peopleCounter,
+.people-counter-value {
+    font-size: clamp(2.2rem, 7vw, 4rem);
     font-weight: 900;
-    color: #FFD600; /* Cor de destaque principal alterada para amarelo */
+    color: #4D96FF;
+    /* Azul vibrante */
     margin: 0 5px;
-    display: inline-block;
-    line-height: 1;
 }
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.animate-hero-title { animation: fadeInDown 0.8s ease-out 0.2s backwards; }
-.animate-hero-tagline { animation: fadeInUp 0.8s ease-out 0.5s backwards; }
-.animate-hero-button { animation: fadeInUp 0.8s ease-out 0.8s backwards; display: inline-block; }
-.animate-hero-subtext { animation: fadeInUp 0.8s ease-out 1.0s backwards; }
-.animate-hero-counter { animation: fadeInUp 0.8s ease-out 1.2s backwards; }
-.animate-hero-people-counter { animation: fadeInUp 0.8s ease-out 1.4s backwards; }
+
+.animate-hero-title {
+    animation: fadeInDown 0.8s ease-out 0.2s backwards;
+}
+
+.animate-hero-tagline {
+    animation: fadeInUp 0.8s ease-out 0.5s backwards;
+}
+
+.animate-hero-button {
+    animation: fadeInUp 0.8s ease-out 0.8s backwards;
+    display: inline-block;
+}
+
+.animate-hero-subtext {
+    animation: fadeInUp 0.8s ease-out 1.0s backwards;
+}
+
+.animate-hero-counter {
+    animation: fadeInUp 0.8s ease-out 1.2s backwards;
+}
+
+.animate-hero-people-counter {
+    animation: fadeInUp 0.8s ease-out 1.4s backwards;
+}
 
 .benefits-section {
     width: 100%;
     padding: 60px 20px;
-    background-color: #1C1C24;
+    background-color: #1B263B;
+    /* Fundo de seção ligeiramente mais claro */
 }
 
 /* Títulos de seção com a nova cor de destaque */
@@ -217,7 +257,8 @@ body {
     text-align: center;
     font-size: clamp(1.8rem, 5vw, 2.8rem);
     font-weight: 700;
-    color: #FFD600;
+    color: #4D96FF;
+    /* Azul vibrante */
     margin-bottom: 50px;
 }
 
@@ -230,17 +271,20 @@ body {
 }
 
 .benefit-card {
-    background-color: #252530;
+    background-color: #202C40;
+    /* Cor dos cards */
     padding: 30px 25px;
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #4A5568;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .benefit-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(255, 214, 0, 0.15); /* Sombra amarela no hover */
+    box-shadow: 0 10px 30px rgba(77, 150, 255, 0.25);
+    /* Sombra azul no hover */
 }
 
 /* Ícones com a nova cor */
@@ -248,7 +292,8 @@ body {
     width: 64px;
     height: 64px;
     margin-bottom: 20px;
-    fill: #FFD600;
+    fill: #4D96FF;
+    /* Azul vibrante */
 }
 
 .benefit-card h3 {
@@ -260,14 +305,15 @@ body {
 
 .benefit-card p {
     font-size: 0.95rem;
-    color: #B0B0B0;
+    color: #A0AEC0;
     line-height: 1.6;
 }
 
 .gallery-section {
     width: 100%;
     padding: 60px 20px;
-    background-color: #121212;
+    background-color: #10121A;
+    /* Retorna ao fundo principal */
     text-align: center;
 }
 
@@ -290,7 +336,8 @@ body {
 
 .gallery-item:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(255, 214, 0, 0.2); /* Sombra amarela no hover */
+    box-shadow: 0 8px 20px rgba(77, 150, 255, 0.2);
+    /* Sombra azul no hover */
 }
 
 .gallery-item img {
@@ -311,7 +358,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(27, 38, 59, 0.85);
+    /* Overlay escuro e translúcido */
     color: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -338,8 +386,10 @@ body {
 .secondary-action-button {
     display: inline-block;
     padding: 14px 35px;
-    border: 2px solid #FFD600;
-    color: #FFD600;
+    border: 2px solid #4D96FF;
+    /* Borda azul */
+    color: #4D96FF;
+    /* Texto azul */
     background-color: transparent;
     border-radius: 50px;
     text-decoration: none;
@@ -350,30 +400,34 @@ body {
     transition: all 0.3s ease;
 }
 
-.secondary-action-button:hover, .secondary-action-button:focus {
-    background-color: #FFD600;
-    color: #121212; /* Texto escuro para legibilidade */
-    box-shadow: 0 5px 15px rgba(255, 214, 0, 0.3);
+.secondary-action-button:hover,
+.secondary-action-button:focus {
+    background-color: #4D96FF;
+    color: #10121A;
+    /* Texto escuro para contraste */
+    box-shadow: 0 5px 15px rgba(77, 150, 255, 0.3);
 }
 
 .brands-section {
     width: 100%;
     padding: 50px 20px;
-    background-color: #1C1C24;
+    background-color: #1B263B;
+    /* Fundo de seção */
     text-align: center;
 }
 
 .brands-section .main-brands-title {
     font-size: clamp(1.5rem, 4vw, 2.2rem);
     font-weight: 700;
-    color: #FFD600; /* Cor de destaque alterada */
+    color: #4D96FF;
+    /* Cor de destaque azul */
     margin-bottom: 25px;
     text-align: center;
 }
 
 .subsection-title {
     font-size: clamp(1.2rem, 3.5vw, 1.8rem);
-    color: #E0E0E0;
+    color: #F0F0F0;
     font-weight: 600;
     margin-top: 40px;
     margin-bottom: 25px;
@@ -406,7 +460,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 80px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.25s ease-out;
 }
 
@@ -417,36 +471,14 @@ body {
 .brand-logo-item img {
     max-height: 50px;
     max-width: 100%;
-    width: auto;
-    height: auto;
     object-fit: contain;
-    vertical-align: middle;
-    animation: continuousLogoNudge 2.8s infinite ease-in-out;
 }
 
-.brands-container .brand-logo-item:nth-child(1) img, .marketplaces-container .brand-logo-item:nth-child(1) img { animation-delay: 0s; }
-.brands-container .brand-logo-item:nth-child(2) img, .marketplaces-container .brand-logo-item:nth-child(2) img { animation-delay: 0.2s; }
-.brands-container .brand-logo-item:nth-child(3) img, .marketplaces-container .brand-logo-item:nth-child(3) img { animation-delay: 0.4s; }
-.brands-container .brand-logo-item:nth-child(4) img, .marketplaces-container .brand-logo-item:nth-child(4) img { animation-delay: 0.6s; }
-.brands-container .brand-logo-item:nth-child(5) img, .marketplaces-container .brand-logo-item:nth-child(5) img { animation-delay: 0.8s; }
-.brands-container .brand-logo-item:nth-child(6) img, .marketplaces-container .brand-logo-item:nth-child(6) img { animation-delay: 1.0s; }
-.brands-container .brand-logo-item:nth-child(7) img { animation-delay: 1.2s; }
-.brands-container .brand-logo-item:nth-child(8) img { animation-delay: 1.4s; }
-
-@keyframes continuousLogoNudge {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-3px) scale(1.03);
-    }
-}
-
-/* Seção final com gradiente laranja para máximo impacto */
+/* Seção final com gradiente azul/roxo para máximo impacto */
 .final-cta-section {
     width: 100%;
     padding: 70px 20px;
-    background: linear-gradient(135deg, #FF8C00, #D2691E); /* DarkOrange to Chocolate */
+    background: linear-gradient(135deg, #0F3460, #533483);
     text-align: center;
 }
 
@@ -460,7 +492,7 @@ body {
 
 .final-cta-text {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #E0E0E0;
+    color: #A0AEC0;
     margin-bottom: 30px;
     max-width: 600px;
     margin-left: auto;
@@ -471,13 +503,13 @@ footer {
     width: 100%;
     text-align: center;
     padding: 30px 20px;
-    background-color: #121212;
-    border-top: 1px solid #2A2A2A;
+    background-color: #10121A;
+    border-top: 1px solid #2A3A59;
 }
 
 footer p {
     font-size: 0.9rem;
-    color: #757575;
+    color: #718096;
 }
 
 .reveal-on-scroll {
@@ -501,14 +533,16 @@ footer p {
     z-index: 999;
     border: none;
     outline: none;
-    background-color: #FF9100; /* Laranja */
-    color: #1A1A1A; /* Texto escuro para legibilidade */
+    background-color: #4D96FF;
+    /* Azul */
+    color: #10121A;
+    /* Texto escuro */
     cursor: pointer;
     padding: 12px 15px;
     border-radius: 50%;
     font-size: 20px;
     line-height: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, background-color 0.3s ease;
     opacity: 0;
     visibility: hidden;
@@ -521,208 +555,62 @@ footer p {
 }
 
 #backToTopBtn:hover {
-    background-color: #FF7A00; /* Laranja mais escuro no hover */
+    background-color: #3B82F6;
+    /* Azul mais escuro no hover */
 }
 
 
 @media (max-width: 992px) {
-    .brands-section .main-brands-title {
-        font-size: clamp(1.4rem, 3.8vw, 2.0rem);
-        margin-bottom: 20px;
-    }
-    .subsection-title {
-        font-size: clamp(1.1rem, 3.3vw, 1.7rem);
-        margin-top: 35px;
-        margin-bottom: 20px;
-    }
     .brands-container {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 700px;
-        gap: 15px;
     }
+
     .marketplaces-container {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 700px;
-        gap: 15px;
     }
-    .brand-logo-item {
-        padding: 12px;
-        min-height: 75px;
-    }
-    .brand-logo-item img {
-        max-height: 45px;
-    }
-    .economy-counter-prefix, .economy-counter-suffix,
-    .people-counter-prefix, .people-counter-suffix {font-size: clamp(0.8rem, 2vw, 1rem);}
-    #economyCounter, .economy-counter-value,
-    #peopleCounter, .people-counter-value { font-size: clamp(1.8rem, 5vw, 3rem);}
 }
 
 @media (max-width: 768px) {
     .hero-section {
         min-height: 70vh;
     }
-    .tagline {
-        margin-bottom: 30px;
-    }
-    .whatsapp-cta-button {
-        padding: 16px 35px;
-        line-height: 1.3;
-    }
-    .whatsapp-cta-button span small {
-        margin-top: 3px;
-        font-size: 0.6em;
-    }
 
-    .secondary-action-button {
-        padding: 12px 30px;
-        font-size: clamp(0.9rem, 1.8vw, 1rem);
-    }
     .benefits-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
+
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
     }
-    .gallery-item img {
-        height: 150px;
-    }
+
     .brands-container,
     .marketplaces-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        max-width: 450px;
-        padding: 5px 0;
     }
-    .brand-logo-item {
-        padding: 10px;
-        min-height: 70px;
-    }
-    .brand-logo-item img {
-        max-height: 40px;
-    }
-    .benefit-card {
-        padding: 25px 20px;
-    }
-    .benefit-icon {
-        width: 56px;
-        height: 56px;
-    }
-    .benefit-card h3 {
-        font-size: 1.3rem;
-    }
-    .economy-counter-prefix, .economy-counter-suffix,
-    .people-counter-prefix, .people-counter-suffix {font-size: clamp(0.75rem, 1.8vw, 0.9rem);}
-    #economyCounter, .economy-counter-value,
-    #peopleCounter, .people-counter-value { font-size: clamp(1.6rem, 4.5vw, 2.8rem);}
 }
 
 @media (max-width: 480px) {
     .hero-section {
-        padding: 30px 15px;
         min-height: 60vh;
     }
-    .brand-title {
-        font-size: clamp(2.2rem, 7vw, 3.5rem);
-    }
-    .tagline {
-        margin-bottom: 25px;
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-    }
-    .whatsapp-cta-button {
-        padding: 15px 25px;
-        font-size: clamp(1rem, 2.2vw, 1.1rem);
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .whatsapp-cta-button span small {
-        font-size: 0.65em;
-    }
 
+    .whatsapp-cta-button,
     .secondary-action-button {
-        width: 80%;
-        padding: 12px 20px;
-        font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+        width: 90%;
     }
-    .cta-subtext {
-        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-    }
-    
-
-    /* Ajustes para os contadores no mobile */
-    .economy-counter-container {
-        text-align: center;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-    .people-counter-container {
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-    .economy-counter-prefix, .economy-counter-suffix,
-    .people-counter-prefix, .people-counter-suffix {
-        font-size: clamp(0.7rem, 1.5vw, 0.85rem); /* Um pouco maior para melhor leitura */
-        text-align: center; /* Garante centralização */
-        display: block; /* Para que ocupem a linha e centralizem */
-        line-height: 1.3;
-    }
-    .economy-counter-suffix { margin-top: 3px; } /* Ajuste fino */
-    .people-counter-suffix { margin-left: 3px; display: inline; } /* Para ficar ao lado do número */
-    .people-counter-prefix { display: inline; margin-right: 3px;}
-
-
-    #economyCounter, .economy-counter-value,
-    #peopleCounter, .people-counter-value {
-        font-size: clamp(1.8rem, 5vw, 2.8rem); /* Aumentado para destaque */
-        line-height: 1;
-        display: block; /* Faz o número ocupar a própria linha */
-        margin-top: 2px;
-        margin-bottom: 2px;
-    }
-    /* Fim dos ajustes para os contadores no mobile */
 
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     }
-    .gallery-item img {
-        height: 130px;
-    }
+
     .brands-container,
     .marketplaces-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        max-width: 320px;
-        padding: 0;
     }
-     .brand-logo-item {
-        padding: 8px;
-        min-height: 60px;
-    }
-    .brand-logo-item img {
-        max-height: 35px;
-    }
-    .benefits-section, .gallery-section, .brands-section, .final-cta-section {
-        padding: 40px 15px;
-    }
-    .section-title,
-    .brands-section .main-brands-title {
-         font-size: clamp(1.3rem, 3.8vw, 1.9rem);
-         margin-bottom: 20px;
-    }
-    .subsection-title {
-        font-size: clamp(1.0rem, 3.3vw, 1.6rem);
-        margin-top: 25px;
-        margin-bottom: 15px;
-    }
-    .section-title-light {
-        margin-bottom: 25px;
-        font-size: clamp(1.6rem, 5vw, 2.2rem);
-    }
-    .benefit-card p {
-        font-size: 0.9rem;
-    }
+}
+
+/* Remover animações e ajustes específicos do tema anterior que não se aplicam mais */
+.brand-logo-item img {
+    animation: none;
+    /* Remove a animação de pulo dos logos */
 }
